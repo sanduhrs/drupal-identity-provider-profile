@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.default
+  module:
+    - real_aes
+id: default
+label: Default
+encryption_method: real_aes
+encryption_key: default
+encryption_method_configuration: {  }

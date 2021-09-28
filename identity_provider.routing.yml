@@ -1,0 +1,43 @@
+identity_provider.admin:
+  path: '/admin/identity-provider'
+  defaults:
+    _controller: '\Drupal\identity_provider\Controller\SystemController::overview'
+    link_id: 'identity_provider.admin'
+    _title: 'Identity Provider'
+  requirements:
+    _permission: 'access administration pages'
+identity_provider.management:
+  path: '/admin/identity-provider/management'
+  defaults:
+    _title: 'Management'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+identity_provider.settings:
+  path: '/admin/identity-provider/settings'
+  defaults:
+    _title: 'Settings'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+identity_provider.login:
+  path: '/admin/identity-provider/login'
+  defaults:
+    _title: 'Login'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+identity_provider.webservice:
+  path: '/admin/identity-provider/webservice'
+  defaults:
+    _title: 'Webservice'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+identity_provider.other:
+  path: '/admin/identity-provider/other'
+  defaults:
+    _title: 'Other'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'

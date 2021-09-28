@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies: {  }
+id: manager
+label: Manager
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access flood unblock'
+  - 'access openapi api docs'
+  - 'access schemata data models'
+  - 'access toolbar'
+  - 'access tour'
+  - 'add consumer entities'
+  - 'add simple_oauth entities'
+  - 'admin tfa settings'
+  - 'administer consumer entities'
+  - 'administer ldap'
+  - 'administer mail login'
+  - 'administer rest resources'
+  - 'administer simple_oauth entities'
+  - 'administer site configuration'
+  - 'administer webhooks'
+  - 'ban IP addresses'
+  - 'debug simple_oauth tokens'
+  - 'delete own consumer entities'
+  - 'delete own simple_oauth entities'
+  - 'disable own tfa'
+  - 'grant simple_oauth codes'
+  - 'manage password reset'
+  - 'setup own tfa'
+  - 'update own consumer entities'
+  - 'update own simple_oauth entities'
+  - 'view own consumer entities'
+  - 'view own simple_oauth entities'
+  - 'view the administration theme'

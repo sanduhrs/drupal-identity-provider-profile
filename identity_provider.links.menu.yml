@@ -1,0 +1,176 @@
+identity_provider.admin:
+  title: 'Identity Provider'
+  route_name: identity_provider.admin
+  weight: -100
+  parent: system.admin
+
+# Main menu structure
+identity_provider.management:
+  title: 'Management'
+  route_name: identity_provider.management
+  weight: -10
+  parent: identity_provider.admin
+identity_provider.settings:
+  title: 'Settings'
+  route_name: identity_provider.settings
+  weight: 0
+  parent: identity_provider.admin
+identity_provider.login:
+  title: 'Login'
+  route_name: identity_provider.login
+  weight: 0
+  parent: identity_provider.admin
+identity_provider.webservice:
+  title: 'Webservice'
+  route_name: identity_provider.webservice
+  weight: 0
+  parent: identity_provider.admin
+identity_provider.other:
+  title: 'Other'
+  route_name: identity_provider.other
+  weight: 0
+  parent: identity_provider.admin
+
+# Management
+identity_provider.entity_user_collection:
+  title: 'People'
+  description: 'Manage user accounts, roles, and permissions.'
+  route_name: entity.user.collection
+  weight: 0
+  parent: identity_provider.management
+identity_provider.flood_control_unblock_form:
+  title: 'Flood'
+  description: 'Manage flood blocks.'
+  route_name: flood_control.unblock_form
+  weight: 10
+  parent: identity_provider.management
+identity_provider.ban:
+  title: 'Bans'
+  description: 'Manage bans from specific IP adresses.'
+  route_name: ban.admin_page
+  weight: 20
+  parent: identity_provider.management
+
+# Settings
+identity_provider.site_settings:
+  title: 'Basic site settings'
+  description: 'Change site name, email address, slogan, default front page and error pages.'
+  route_name: system.site_information_settings
+  weight: 0
+  parent: identity_provider.settings
+identity_provider.entity_user_admin_form:
+  title: 'Account settings'
+  description: 'Configure default user account settings, including fields, registration requirements, and email messages.'
+  route_name: entity.user.admin_form
+  weight: 0
+  parent: identity_provider.settings
+identity_provider.flood_control:
+  title: 'Flood control'
+  description: 'Configure hidden flood control variables, like the login attempt limiters.'
+  route_name: flood_control.settings
+  weight: 0
+  parent: identity_provider.settings
+
+# Login
+identity_provider.login_security:
+  title: 'Login security'
+  description: 'Enable security options in the login flow of the site.'
+  route_name: login_security.settings
+  weight: 0
+  parent: identity_provider.login
+identity_provider.mail_login_admin:
+  title: 'Mail Login'
+  description: 'Configure mail login options.'
+  route_name: mail_login.admin
+  weight: 0
+  parent: identity_provider.login
+identity_provider.password_policy:
+  title: 'Password policy'
+  description: 'Create password policies.'
+  route_name: entity.password_policy.collection
+  weight: 0
+  parent: identity_provider.login
+identity_provider.tfa:
+  title: 'Two-factor Authentication'
+  description: 'TFA process and plugin settings.'
+  route_name: tfa.settings
+  weight: 0
+  parent: identity_provider.login
+
+# Webservice
+identity_provider.simple_oauth:
+  title: 'Simple OAuth'
+  description: 'Configure the Simple OAuth settings and manage entities.'
+  route_name: oauth2_token.settings
+  weight: 0
+  parent: identity_provider.webservice
+identity_provider.entity_webhook_config_collection:
+  title: 'Webhooks'
+  description: 'Manage Webhooks.'
+  route_name: entity.webhook_config.collection
+  weight: 0
+  parent: identity_provider.webservice
+identity_provider.consumers:
+  title: 'Consumers'
+  description: 'Register and configure the decoupled consumers to your API.'
+  route_name: entity.consumer.collection
+  weight: 0
+  parent: identity_provider.webservice
+identity_provider.openapi_downloads:
+  title: 'OpenAPI Resources'
+  description: 'Manage OpenAPI Resources'
+  route_name: openapi.downloads
+  weight: 0
+  parent: identity_provider.webservice
+identity_provider.jsonapi_extras_settings:
+  title: 'JSON:API Extras'
+  description: 'Manage JSON:API Resources.'
+  route_name: jsonapi_extras.settings
+  weight: 0
+  parent: identity_provider.webservice
+identity_provider.cors_settings:
+  title: 'CORS'
+  description: 'Manage Cross-origin resource sharing settings.'
+  route_name: cors.settings
+  weight: 0
+  parent: identity_provider.webservice
+
+# Other
+identity_provider.encrypt:
+  title: 'Encryption Profiles'
+  description: 'Manage profiles that can be used to encrypt and decrypt data.'
+  route_name: entity.encryption_profile.collection
+  weight: 0
+  parent: identity_provider.other
+identity_provider.keys:
+  title: 'Keys'
+  description: 'Manage site-wide keys.'
+  route_name: entity.key.collection
+  weight: 0
+  parent: identity_provider.other
+identity_provider.gin_login:
+  title: 'Gin Login'
+  description: 'Gin Login.'
+  route_name: gin_login.configuration_form
+  weight: 0
+  parent: identity_provider.other
+
+
+
+
+
+
+
+
+#identity_provider.simplesamlphp_auth:
+#  title: 'SimpleSAMLphp Auth Settings'
+#  description: 'Manage profiles that can be used to encrypt and decrypt data.'
+#  route_name: simplesamlphp_auth.admin_settings
+#  weight: 0
+#  parent: identity_provider.category_03
+#identity_provider.csp:
+#  title: 'Content security policy'
+#  description: 'Register and configure the decoupled consumers to your API.'
+#  route_name: csp.settings
+#  weight: 0
+#  parent: identity_provider.category_04

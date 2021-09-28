@@ -1,0 +1,13 @@
+{
+    "name": "drupal/identity_provider",
+    "description": "The Open Source Identity Provider install profile.",
+    "type": "drupal-profile",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Stefan Auditor",
+            "email": "stefan@auditor.email"
+        }
+    ],
+    "require": {}
+}

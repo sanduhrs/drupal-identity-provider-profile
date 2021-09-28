@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: openid_connect_register_rate_limit
+label: 'OpenID Connect Register rate limit'
+path: /oauth/register
+tag: openid-connect-register
