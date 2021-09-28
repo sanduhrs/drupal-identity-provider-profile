@@ -1,0 +1,132 @@
+name: Identity Provider
+type: profile
+description: 'The Open Source Identity Provider Distribution.'
+core_version_requirement: '^8.8 || ^9'
+
+# Optional: Declare your installation profile as a distribution
+# This will make the installer auto-select this installation profile.
+# The distribution_name property is used in the installer and other places as
+# a label for the software being installed.
+distribution:
+  name: Identity Provider
+  # If you want your distribution to pre-select a language you can specify
+  # the language code, as well. This will prevent the user from selecting
+  # a language code in the user interface. While not recommended for generic
+  # community distributions, this can be very useful for distributions that
+  # are tailored to a language-specific audience (for example government
+  # institutions in a certain country) but also site-specific installation
+  # profiles. Note that this language code will also be used when installing
+  # the site via Drush.
+  #
+  # To set your theme as the theme for the distribution installation uncomment the following:
+  #
+#  install:
+#    theme: claro
+  langcode: en
+
+# Modules to install to support the profile.
+install:
+  - automated_cron
+  - ban
+  - basic_auth
+  - big_pipe
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - color
+  - comment
+  - config
+  - contextual
+  - dblog
+  - datetime
+  - dynamic_page_cache
+  - editor
+  - field
+  - field_ui
+  - file
+  - filter
+  - hal
+  - help
+  - image
+  - inline_form_errors
+  - language
+  - layout_builder
+  - layout_discovery
+  - link
+  - locale
+  - media
+  - media_library
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - path_alias
+  - serialization
+  - shortcut
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - toolbar
+  - tour
+  - update
+  - user
+  - views
+  - views_ui
+  - views
+  - admin_toolbar
+  - admin_toolbar_links_access_filter
+  - consumers
+  - cors
+  - ctools
+  - dblog
+  - encrypt
+  - flood_control
+  - ga_login
+  - gin_login
+  - gin_toolbar
+  - jsonapi
+  - jsonapi_extras
+  - jsonapi_hypermedia
+  - jsonapi_include
+  - key
+  - login_security
+  - mail_login
+  - openapi
+  - openapi_jsonapi
+  - openapi_ui
+  - openapi_ui_swagger
+  - openid_connect_discovery
+  - openid_connect_dynamic_registration
+  - password_policy
+  - password_policy_character_types
+  - password_policy_characters
+  - password_policy_consecutive
+  - password_policy_history
+  - password_policy_length
+  - password_policy_username
+  - pathauto
+  - rate_limits
+  - real_aes
+  - restui
+  - schemata
+  - schemata_json_schema
+  - simple_oauth
+  - tagged_routes
+  - token
+  - tfa
+  - token
+  - webhooks
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+
+# List any themes that should be installed as part of the profile installation.
+# Note that this will not set any theme as the default theme.
+themes:
+  - olivero
+  - claro
+  - gin

@@ -1,0 +1,15 @@
+site_name: 'Drush Site-Install'
+short_name: 'Drush Site-Install'
+description: ''
+start_url: /
+lang: en
+theme_color: ''
+background_color: ''
+display: ''
+default_image: '0'
+urls_to_cache: ''
+urls_to_exclude: "admin/.*\r\nuser/.*"
+offline_page: /offline
+cache_version: '1'
+cross_origin: false
+skip_waiting: false
