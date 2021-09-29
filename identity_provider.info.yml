@@ -80,7 +80,6 @@ install:
   - admin_toolbar
   - admin_toolbar_links_access_filter
   - consumers
-  - cors
   - ctools
   - dblog
   - encrypt
