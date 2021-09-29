@@ -92,6 +92,8 @@ install:
   - jsonapi_hypermedia
   - jsonapi_include
   - key
+  - ldap
+  - ldap_servers
   - login_security
   - mail_login
   - openapi
