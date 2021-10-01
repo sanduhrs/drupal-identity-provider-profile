@@ -128,12 +128,6 @@ identity_provider.jsonapi_extras_settings:
   route_name: jsonapi_extras.settings
   weight: 0
   parent: identity_provider.webservice
-identity_provider.cors_settings:
-  title: 'CORS'
-  description: 'Manage Cross-origin resource sharing settings.'
-  route_name: cors.settings
-  weight: 0
-  parent: identity_provider.webservice
 
 # Other
 identity_provider.encrypt:
