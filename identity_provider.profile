@@ -32,61 +32,76 @@ function identity_provider_install_tasks(&$install_state) {
 }
 
 /**
+ * Implements hook_install_tasks_alter();
+ */
+function identity_provider_install_tasks_alter(&$tasks, $install_state) {
+  $weighted_tasks = [
+    '_identity_provider_generate_keys' => $tasks['_identity_provider_generate_keys'],
+    '_identity_provider_enable_cors' => $tasks['_identity_provider_enable_cors'],
+  ];
+  unset($tasks['_identity_provider_generate_keys'], $tasks['_identity_provider_enable_cors']);
+  $tasks = array_merge($weighted_tasks, $tasks);
+}
+
+/**
  * Generates the OAuth Keys.
  */
 function _identity_provider_generate_keys() {
-  // Build all the dependencies manually to avoid having to rely on the
-  // container to be ready.
-  $dir_name = 'keys';
-  /** @var \Drupal\simple_oauth\Service\KeyGeneratorService $key_gen */
-  $key_gen = \Drupal::service('simple_oauth.key.generator');
-  /** @var \Drupal\simple_oauth\Service\Filesystem\FileSystemChecker $file_system_checker */
-  $file_system_checker = \Drupal::service('simple_oauth.filesystem_checker');
-  /** @var \Drupal\Core\File\FileSystem $file_system */
-  $file_system = \Drupal::service('file_system');
-  /** @var \Drupal\Core\Logger\LoggerChannelInterface $logger */
-  $logger = \Drupal::service('logger.factory')->get('identity_provider');
-
-  $relative_path = DRUPAL_ROOT . '/../' . $dir_name;
-  if (!$file_system_checker->isDirectory($relative_path)) {
-    $file_system->mkdir($relative_path);
+  $relative_path = DRUPAL_ROOT . '/../keys/';
+  if (!is_dir($relative_path)) {
+    mkdir($relative_path);
   }
-  $keys_path = $file_system->realpath($relative_path);
-  $pub_filename = sprintf('%s/public.key', $keys_path);
-  $pri_filename = sprintf('%s/private.key', $keys_path);
-  $enc_filename = sprintf('%s/encrypt.key', $keys_path);
 
-  if ($file_system_checker->fileExist($pub_filename) && $file_system_checker->fileExist($pri_filename)) {
+  if (file_exists($relative_path)
+      && file_exists($relative_path . 'keys/private.key')
+  ) {
     // 1. If the file already exists, then just set the correct permissions.
-    $file_system->chmod($pub_filename, 0600);
-    $file_system->chmod($pri_filename, 0600);
-    $logger->info('Key pair for OAuth 2 token signing already exists.');
+    chmod($relative_path . 'private.key', 0600);
+    error_log('Key pair for OAuth 2 token signing already exists.');
   }
   else {
     // 2. Generate the pair in the selected directory.
     try {
-      $key_gen->generateKeys($keys_path);
+      error_log('generate keys');
+
+      // Generate Resource.
+      $resource = openssl_pkey_new([
+        "digest_alg" => "sha512",
+        "private_key_bits" => 4096,
+        "private_key_type" => OPENSSL_KEYTYPE_RSA,
+      ]);
+
+      // Get Private Key.
+      openssl_pkey_export($resource, $pkey);
+      // Get Public Key.
+      $pubkey = openssl_pkey_get_details($resource);
+
+      file_put_contents($relative_path . 'public.key', $pubkey['key']);
+      file_put_contents($relative_path . 'private.key', $pkey);
+
+      chmod($relative_path . 'public.key', 0600);
+      chmod($relative_path . 'private.key', 0600);
     } catch (\Exception $e) {
       // Unable to generate files after all.
-      $logger->error($e->getMessage());
+      error_log('not able to generate keys');
       return;
     }
   }
 
-  if ($file_system_checker->fileExist($enc_filename)) {
+  if (file_exists($relative_path . 'encrypt.key')) {
     // 1. If the file already exists, then just set the correct permissions.
-    $file_system->chmod($enc_filename, 0600);
-    $logger->info('Encryption key already exists.');
+    chmod($relative_path . 'keys/encrypt.key', 0600);
   }
   else {
     // 2. Generate the key in the selected directory.
     try {
       $data = base64_encode(random_bytes(32));
-      file_put_contents($enc_filename, $data);
-      $file_system->chmod($enc_filename, 0600);
+      file_put_contents($relative_path . 'encrypt.key', $data);
+
+      chmod($relative_path . 'encrypt.key', 0600);
     } catch (\Exception $e) {
       // Unable to generate file after all.
-      $logger->error($e->getMessage());
+      error_log($e->getMessage());
       return;
     }
   }
@@ -101,18 +116,10 @@ function _identity_provider_enable_cors() {
   $drupal_kernel = \Drupal::service('kernel');
   $file_path = $drupal_kernel->getAppRoot() . '/' . $drupal_kernel->getSitePath();
   $filename = $file_path . '/services.yml';
-  if (file_exists($filename)) {
-    $services_yml = file_get_contents($filename);
 
-    $yml_data = Yaml::decode($services_yml);
-    if (empty($yml_data['parameters']['cors.config']['enabled'])) {
-      $yml_data['parameters']['cors.config']['enabled'] = TRUE;
-      $yml_data['parameters']['cors.config']['allowedHeaders'] = ['*'];
-      $yml_data['parameters']['cors.config']['allowedMethods'] = ['*'];
-      $yml_data['parameters']['cors.config']['allowedOrigins'] = ['localhost'];
-      $yml_data['parameters']['cors.config']['allowedOriginsPatterns'] = ['/localhost:\d+/'];
-
-      file_put_contents($filename, Yaml::encode($yml_data));
-    }
-  }
+  $yml_data['parameters']['cors.config']['enabled'] = TRUE;
+  $yml_data['parameters']['cors.config']['allowedHeaders'] = ['*'];
+  $yml_data['parameters']['cors.config']['allowedMethods'] = ['*'];
+  $yml_data['parameters']['cors.config']['allowedOrigins'] = ['localhost'];
+  file_put_contents($filename, Yaml::encode($yml_data));
 }
