@@ -89,6 +89,7 @@ install:
   - gin_toolbar
   - jsonapi
   - jsonapi_extras
+  - jsonapi_entity_filter_override
   - jsonapi_hypermedia
   - jsonapi_include
   - key
