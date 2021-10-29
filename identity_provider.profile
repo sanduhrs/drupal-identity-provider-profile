@@ -24,9 +24,6 @@ function identity_provider_install_tasks(&$install_state) {
     '_identity_provider_generate_keys' => [
       'display_name' => t('Generate OAuth 2 and encryption keys'),
     ],
-    '_identity_provider_enable_cors' => [
-      'display_name' => t('Enable CORS by default'),
-    ],
   ];
   return $tasks;
 }
@@ -35,11 +32,7 @@ function identity_provider_install_tasks(&$install_state) {
  * Implements hook_install_tasks_alter();
  */
 function identity_provider_install_tasks_alter(&$tasks, $install_state) {
-  $weighted_tasks = [
-    '_identity_provider_generate_keys' => $tasks['_identity_provider_generate_keys'],
-    '_identity_provider_enable_cors' => $tasks['_identity_provider_enable_cors'],
-  ];
-  unset($tasks['_identity_provider_generate_keys'], $tasks['_identity_provider_enable_cors']);
+  $weighted_tasks = [];
   $tasks = array_merge($weighted_tasks, $tasks);
 }
 
@@ -105,21 +98,4 @@ function _identity_provider_generate_keys() {
       return;
     }
   }
-}
-
-/**
- * Alters the services.yml to enable CORS by default.
- */
-function _identity_provider_enable_cors() {
-  // Enable CORS for localhost.
-  /** @var \Drupal\Core\DrupalKernelInterface $drupal_kernel */
-  $drupal_kernel = \Drupal::service('kernel');
-  $file_path = $drupal_kernel->getAppRoot() . '/' . $drupal_kernel->getSitePath();
-  $filename = $file_path . '/services.yml';
-
-  $yml_data['parameters']['cors.config']['enabled'] = TRUE;
-  $yml_data['parameters']['cors.config']['allowedHeaders'] = ['*'];
-  $yml_data['parameters']['cors.config']['allowedMethods'] = ['*'];
-  $yml_data['parameters']['cors.config']['allowedOrigins'] = ['localhost'];
-  file_put_contents($filename, Yaml::encode($yml_data));
 }
