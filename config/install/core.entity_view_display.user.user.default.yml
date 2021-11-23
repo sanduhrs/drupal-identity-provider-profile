@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.user.user.field_last_password_reset
     - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_welcome_dialog_deactivated
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -15,8 +16,10 @@ bundle: user
 mode: default
 content:
   member_for:
-    weight: 5
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
@@ -29,4 +32,5 @@ content:
 hidden:
   field_last_password_reset: true
   field_password_expiration: true
+  field_welcome_dialog_deactivated: true
   langcode: true
