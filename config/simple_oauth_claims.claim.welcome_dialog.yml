@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: welcome_dialog
+label: 'Welcome dialog'
+type: oidc
+name: welcome_dialog_deactivated
+field_name: field_welcome_dialog_deactivated
