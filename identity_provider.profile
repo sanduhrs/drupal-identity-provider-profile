@@ -32,7 +32,10 @@ function identity_provider_install_tasks(&$install_state) {
  * Implements hook_install_tasks_alter();
  */
 function identity_provider_install_tasks_alter(&$tasks, $install_state) {
-  $weighted_tasks = [];
+  $weighted_tasks = [
+    '_identity_provider_generate_keys' => $tasks['_identity_provider_generate_keys'],
+  ];
+  unset($tasks['_identity_provider_generate_keys']);
   $tasks = array_merge($weighted_tasks, $tasks);
 }
 
