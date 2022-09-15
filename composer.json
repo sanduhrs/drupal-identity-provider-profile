@@ -54,14 +54,13 @@
         "drupal/restui": "^1.20",
         "drupal/schemata": "@dev",
         "drupal/schemata_json_schema": "@dev",
-        "drupal/simple_oauth": "^5.0",
+        "drupal/simple_oauth": "^5.2",
         "drupal/simplesamlphp_auth": "^3.2",
         "drupal/tagged_routes": "^1.0",
         "drupal/tfa": "@dev",
         "drupal/webauthn": "@dev",
         "drupal/webhooks": "@dev",
         "drush/drush": "^10.5",
-        "lcobucci/jwt": "^3.4",
         "mglaman/drupal-check": "^1.1",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "npm-asset/jquery-circle-progress": "^1.2",
@@ -71,5 +70,12 @@
         "yubico/u2flib-server": "^1.0",
         "drupal/jsonapi_entity_filter_override": "^1.0",
         "drupal/simple_oauth_claims": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "drupal/core-composer-scaffold": true,
+            "mnsami/composer-custom-directory-installer": true,
+            "simplesamlphp/composer-module-installer": true
+        }
     }
 }
