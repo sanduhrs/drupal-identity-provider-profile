@@ -28,7 +28,6 @@
         "drupal/csp": "^1.15",
         "drupal/encrypt": "^3.0",
         "drupal/flood_control": "^2.1",
-        "drupal/ga_login": "@dev",
         "drupal/gin": "@dev",
         "drupal/gin_lb": "@dev",
         "drupal/gin_login": "@dev",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "698931ea6e1f73a90f71f341196966c7",
+    "content-hash": "795ef73a2ec078a01dbbf5fee65a8fb8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2527,73 +2527,6 @@
             }
         },
         {
-            "name": "drupal/ga_login",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ga_login.git",
-                "reference": "d99b1945781aacac7a56940432d73610ef1c44ac"
-            },
-            "require": {
-                "chillerlan/php-qrcode": "^1.0.9 || ^2.0 || ^3.2 || ^4.0",
-                "christian-riesen/otp": "^2.1",
-                "drupal/core": "^8 || ^9",
-                "drupal/tfa": "^1.0"
-            },
-            "require-dev": {
-                "drupal/tfa": "1.x-dev"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-alpha6+2-dev",
-                    "datestamp": "1614341446",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Jelle_S",
-                    "homepage": "https://www.drupal.org/user/829198"
-                },
-                {
-                    "name": "attiks",
-                    "homepage": "https://www.drupal.org/user/105002"
-                },
-                {
-                    "name": "daggerhart",
-                    "homepage": "https://www.drupal.org/user/167806"
-                },
-                {
-                    "name": "jcnventura",
-                    "homepage": "https://www.drupal.org/user/122464"
-                },
-                {
-                    "name": "nerdstein",
-                    "homepage": "https://www.drupal.org/user/1557710"
-                },
-                {
-                    "name": "therealssj",
-                    "homepage": "https://www.drupal.org/user/3408074"
-                }
-            ],
-            "description": "TFA plugins for Hmac-Based One Time Passwords & Time Based One Time Password with recovery codes as fallback.",
-            "homepage": "https://www.drupal.org/project/ga_login",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ga_login"
-            }
-        },
-        {
             "name": "drupal/gin",
             "version": "dev-3.x",
             "source": {
@@ -4498,9 +4431,11 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tfa.git",
-                "reference": "988dffb85e87f922f49d8d917340b2990e9cf2ca"
+                "reference": "89e625826a0451ccd12bbb99a07ff0556cdc0fd8"
             },
             "require": {
+                "chillerlan/php-qrcode": "^1.0.9 || ^2.0 || ^3.2 || ^4.0",
+                "christian-riesen/otp": "^2.1",
                 "drupal/core": "^8 || ^9",
                 "drupal/encrypt": "~3.0",
                 "php": ">=7.0"
@@ -4516,8 +4451,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha8+1-dev",
-                    "datestamp": "1648543126",
+                    "version": "8.x-1.0-alpha8+20-dev",
+                    "datestamp": "1664980827",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -4525,7 +4460,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
@@ -14782,7 +14717,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/authorization": 20,
-        "drupal/ga_login": 20,
         "drupal/gin": 20,
         "drupal/gin_lb": 20,
         "drupal/gin_login": 20,
