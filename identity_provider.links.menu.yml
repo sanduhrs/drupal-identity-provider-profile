@@ -142,20 +142,12 @@ identity_provider.keys:
   route_name: entity.key.collection
   weight: 0
   parent: identity_provider.other
-identity_provider.gin_login:
-  title: 'Gin Login'
-  description: 'Gin Login.'
-  route_name: gin_login.configuration_form
-  weight: 0
-  parent: identity_provider.other
-
-
-
-
-
-
-
-
+#identity_provider.gin_login:
+#  title: 'Gin Login'
+#  description: 'Gin Login.'
+#  route_name: gin_login.configuration_form
+#  weight: 0
+#  parent: identity_provider.other
 #identity_provider.simplesamlphp_auth:
 #  title: 'SimpleSAMLphp Auth Settings'
 #  description: 'Manage profiles that can be used to encrypt and decrypt data.'
