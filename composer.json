@@ -59,7 +59,6 @@
         "drupal/tfa": "@dev",
         "drupal/webauthn": "@dev",
         "drupal/webhooks": "@dev",
-        "drush/drush": "^10.5",
         "mglaman/drupal-check": "^1.1",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "npm-asset/jquery-circle-progress": "^1.2",
