@@ -4431,7 +4431,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tfa.git",
-                "reference": "89e625826a0451ccd12bbb99a07ff0556cdc0fd8"
+                "reference": "c820d1356a79fe17e76f09820f1345905151a88c"
             },
             "require": {
                 "chillerlan/php-qrcode": "^1.0.9 || ^2.0 || ^3.2 || ^4.0",
@@ -4451,8 +4451,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha8+20-dev",
-                    "datestamp": "1664980827",
+                    "version": "8.x-1.0-alpha8+25-dev",
+                    "datestamp": "1665133011",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
