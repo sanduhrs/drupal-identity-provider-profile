@@ -56,7 +56,7 @@
         "drupal/simple_oauth": "^5.2",
         "drupal/simplesamlphp_auth": "^3.2",
         "drupal/tagged_routes": "^1.0",
-        "drupal/tfa": "@dev",
+        "drupal/tfa": "1.0-alpha8",
         "drupal/webauthn": "@dev",
         "drupal/webhooks": "@dev",
         "mglaman/drupal-check": "^1.1",
@@ -67,7 +67,8 @@
         "web-auth/webauthn-lib": "^3.3",
         "yubico/u2flib-server": "^1.0",
         "drupal/jsonapi_entity_filter_override": "^1.0",
-        "drupal/simple_oauth_claims": "^1.0"
+        "drupal/simple_oauth_claims": "^1.0",
+        "drupal/ga_login": "1.0-alpha6"
     },
     "config": {
         "allow-plugins": {
