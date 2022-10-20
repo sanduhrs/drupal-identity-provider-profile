@@ -53,7 +53,7 @@
         "drupal/restui": "^1.20",
         "drupal/schemata": "@dev",
         "drupal/schemata_json_schema": "@dev",
-        "drupal/simple_oauth": "^5.2",
+        "drupal/simple_oauth": "^6.0@beta",
         "drupal/simplesamlphp_auth": "^3.2",
         "drupal/tagged_routes": "^1.0",
         "drupal/tfa": "1.0-alpha8",
