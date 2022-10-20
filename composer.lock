@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46cd8d0ca64538a50125fca20d6acd89",
+    "content-hash": "493845ee827fd70e9d765764f9f04ac7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3052,17 +3052,17 @@
         },
         {
             "name": "drupal/openid_connect_discovery",
-            "version": "1.0.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/openid_connect_discovery.git",
-                "reference": "1.0.1"
+                "reference": "1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/openid_connect_discovery-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "ba6996c622edfd5bb68f574b9a1c0517bc1ec683"
+                "url": "https://ftp.drupal.org/files/projects/openid_connect_discovery-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "97bf8c57c4aa9886c1912155ce08c0dce204a5e6"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -3071,8 +3071,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1666196075",
+                    "version": "1.0.0",
+                    "datestamp": "1666038626",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3081,13 +3081,12 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2-or-later"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "sanduhrs",
-                    "homepage": "https://www.drupal.org/user/28074",
-                    "email": "stefan@auditor.email"
+                    "homepage": "https://www.drupal.org/user/28074"
                 }
             ],
             "description": "OpenID Connect discovery mechanism.",
@@ -3652,21 +3651,21 @@
         },
         {
             "name": "drupal/simple_oauth",
-            "version": "6.0.0-beta1",
+            "version": "5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simple_oauth.git",
-                "reference": "6.0.0-beta1"
+                "reference": "5.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_oauth-6.0.0-beta1.zip",
-                "reference": "6.0.0-beta1",
-                "shasum": "b097547b5f43b7a7f295f739f05b0bc0dfdbed44"
+                "url": "https://ftp.drupal.org/files/projects/simple_oauth-5.2.0.zip",
+                "reference": "5.2.0",
+                "shasum": "3d2b0f38284190a59e4ac99d6f5d4af424c4d19f"
             },
             "require": {
                 "drupal/consumers": "^1.2",
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^8 || ^9",
                 "lcobucci/jwt": "^4",
                 "league/oauth2-server": "^8.3",
                 "php": ">=7.4",
@@ -3678,22 +3677,22 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.0-beta1",
-                    "datestamp": "1665558010",
+                    "version": "5.2.0",
+                    "datestamp": "1641403293",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": "^9"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -13614,7 +13613,6 @@
         "drupal/openapi_ui_swagger": 20,
         "drupal/schemata": 20,
         "drupal/schemata_json_schema": 20,
-        "drupal/simple_oauth": 10,
         "drupal/tfa": 15,
         "drupal/webauthn": 20,
         "drupal/webhooks": 20,
