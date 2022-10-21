@@ -69,7 +69,8 @@
         "drupal/simple_oauth_claims": "^1.0",
         "drupal/openid_connect_discovery": "^1.0",
         "drupal/openid_connect_dynamic_registration": "^1.0",
-        "drupal/tfa": "^1@alpha"
+        "drupal/tfa": "^1@alpha",
+        "drupal/consumers": "1.13.0"
     },
     "config": {
         "allow-plugins": {
