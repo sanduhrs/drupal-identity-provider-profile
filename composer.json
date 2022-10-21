@@ -56,7 +56,6 @@
         "drupal/simple_oauth": "^5.2",
         "drupal/simplesamlphp_auth": "^3.2",
         "drupal/tagged_routes": "^1.0",
-        "drupal/tfa": "1.0-alpha8",
         "drupal/webauthn": "@dev",
         "drupal/webhooks": "@dev",
         "mglaman/drupal-check": "^1.1",
@@ -70,7 +69,7 @@
         "drupal/simple_oauth_claims": "^1.0",
         "drupal/openid_connect_discovery": "^1.0",
         "drupal/openid_connect_dynamic_registration": "^1.0",
-        "drupal/ga_login": "^1.0@alpha"
+        "drupal/tfa": "^1@alpha"
     },
     "config": {
         "allow-plugins": {
