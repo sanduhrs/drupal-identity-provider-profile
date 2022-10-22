@@ -40,7 +40,6 @@
         "drupal/ldap_servers": "^4@dev",
         "drupal/login_security": "^2.0",
         "drupal/mail_login": "^2.4",
-        "drupal/oauth2_server": "@dev",
         "drupal/openapi": "@dev",
         "drupal/openapi_jsonapi": "^3",
         "drupal/openapi_ui": "@dev",
@@ -54,7 +53,6 @@
         "drupal/schemata": "@dev",
         "drupal/schemata_json_schema": "@dev",
         "drupal/simple_oauth": "^5.2",
-        "drupal/simplesamlphp_auth": "^3.2",
         "drupal/tagged_routes": "^1.0",
         "drupal/webauthn": "@dev",
         "drupal/webhooks": "@dev",
@@ -76,7 +74,7 @@
         "allow-plugins": {
             "drupal/core-composer-scaffold": true,
             "mnsami/composer-custom-directory-installer": true,
-            "simplesamlphp/composer-module-installer": true
+            "simplesamlphp/composer-module-installer": false
         }
     }
 }
